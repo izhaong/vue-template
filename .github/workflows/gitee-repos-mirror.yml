@@ -9,7 +9,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
         with:
           source-repo: "git@github.com:izhaong/vue-template.git"
-          destination-repo: "https://gitee.com/izhaong/vue-template.git"
+          destination-repo: "git@gitee.com:izhaong/vue-template.git"
       # - name: Build Gitee Pages
         # uses: yanglbme/gitee-pages-action@main
         # with:

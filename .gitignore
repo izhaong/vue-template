@@ -1,6 +1,15 @@
 .DS_Store
+# dependencies
 node_modules
-/dist
+**/node_modules
+
+# production
+build
+src/.umi
+dist
+
+# roadhog-api-doc ignore
+doc
 
 
 # local env files
@@ -13,11 +22,23 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# screenshot
+screenshot
+.firebase
+.eslintcache
+
 # Editor directories and files
 .idea
-.vscode
+# .vscode
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# visual studio code
+.history
+*.log
+functions/*
+.temp/**
+

@@ -2,6 +2,8 @@
   "name": "vue2-h5-tpl",
   "version": "0.1.0",
   "private": true,
+  "description": "A front-end development base template with comprehensive knowledge points",
+  "author": "izhaong <izhaong@outlook.com>",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -48,5 +50,22 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "bugs": {
+    "url": "https://github.com/izhaong/vue-template/issues"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">= 6"
+  },
+  "keywords": [
+    "vue",
+    "template",
+    "vue-h5"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izhaong/vue-template.git"
   }
 }

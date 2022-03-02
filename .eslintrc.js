@@ -139,7 +139,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'object-curly-spacing': [2, 'always', { objectsInObjects: false }],
     'array-bracket-spacing': [2, 'never'],
-    'vue-libs/jsx-uses-vars': 2,
+    'vue-libs/jsx-uses-vars': 0,
     'vue/require-v-for-key': 0
   }
 }

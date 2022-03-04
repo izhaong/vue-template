@@ -1,12 +1,18 @@
 /*
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2022-03-02 10:18:07
- * @LastEditTime: 2022-03-02 15:19:48
+ * @LastEditTime: 2022-03-04 13:52:02
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
  * @FilePath: /vue-template/vue.config.js
  */
 module.exports = {
+  pluginOptions: {
+    // windicss 配置
+    windicss: {
+      // see https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts
+    }
+  },
   // 修改样式变量
   css: {
     loaderOptions: {

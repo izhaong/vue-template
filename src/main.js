@@ -20,6 +20,7 @@ import 'vant/lib/index.css'
 // styles
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
 import '@/styles/index.less' // global css
+import 'windi.css'
 
 // install
 // Vue.use(Vant)

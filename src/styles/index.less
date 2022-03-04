@@ -1,21 +1,10 @@
 /*
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2022-03-02 09:54:43
- * @LastEditTime: 2022-03-02 16:40:13
+ * @LastEditTime: 2022-03-04 11:10:32
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description: 
  * @FilePath: /vue-template/src/styles/index.less
  */
 
-
-/**
- * 适配 iphone 底部安全区（指示条，配合index.html <meta name="viewport" ... />使用
- */
- @supports (bottom: env(safe-area-inset-bottom)) {
-  #app {
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-}
-
-// @supports 是CSS3新引入的规则之一，主要用于检测当前浏览器是否支持某个CSS属性并加载具体样式.
+ @import './init.less';

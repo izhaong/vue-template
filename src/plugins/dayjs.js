@@ -3,7 +3,7 @@
  * @Date: 2022-03-01 20:33:10
  * @LastEditTime: 2022-03-01 20:36:28
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
- * @Description: 
+ * @Description:
  * @FilePath: /vue-template/src/plugins/dayjs.js
  */
 import Vue from 'vue'

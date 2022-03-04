@@ -1,15 +1,13 @@
 /*
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2022-03-01 20:16:52
- * @LastEditTime: 2022-03-02 10:17:14
+ * @LastEditTime: 2022-03-03 10:11:59
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
  * @FilePath: /vue-template/babel.config.js
  */
 module.exports = {
-  presets: [
-    '@vue/cli-plugin-babel/preset'
-  ],
+  presets: ['@vue/cli-plugin-babel/preset'],
   plugins: [
     [
       'import',
@@ -22,4 +20,5 @@ module.exports = {
       'vant'
     ]
   ]
+
 }

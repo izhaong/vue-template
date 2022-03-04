@@ -1,7 +1,7 @@
 /*
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2022-03-01 20:16:52
- * @LastEditTime: 2022-03-02 16:36:40
+ * @LastEditTime: 2022-03-04 09:51:44
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
  * @FilePath: /vue-template/src/router/index.js
@@ -12,7 +12,7 @@ import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
 const modulesFiles = require.context('./modules', false, /\.js$/)
-const valOfModules = modulesFiles.keys().map((modulePath) => {
+const modules = modulesFiles.keys().map((modulePath) => {
   const value = modulesFiles(modulePath)
   return value.default
 }, {})
@@ -23,10 +23,11 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  ...valOfModules
+  ...modules
 ]
 
 const router = new VueRouter({
+  scrollBehavior: () => ({ y: 0 }),
   routes
 })
 

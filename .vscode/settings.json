@@ -75,29 +75,11 @@
     "source.fixAll.eslint": true
   },
   "[vue]": {
-    "editor.defaultFormatter": "octref.vetur",
+    "editor.defaultFormatter": "johnsoncodehk.volar",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     }
   },
-  "vetur.format.defaultFormatter.html": "prettier",
-  "vetur.format.defaultFormatter.pug": "prettier",
-  "vetur.format.defaultFormatter.css": "prettier",
-  "vetur.format.defaultFormatter.postcss": "prettier",
-  "vetur.format.defaultFormatter.scss": "prettier",
-  "vetur.format.defaultFormatter.less": "prettier",
-  "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
-  "vetur.format.defaultFormatter.js": "prettier",
-  "vetur.format.defaultFormatter.ts": "prettier",
-  "vetur.format.defaultFormatter.sass": "sass-formatter",
-  "vetur.format.options.tabSize": 2,
-  "vetur.format.options.useTabs": false,
-  "vetur.format.defaultFormatterOptions": {
-    "prettier": {
-      "semi": false,
-      "printWidth": 180,
-      "singleQuote": true,
-      "trailingComma": "none",
-    }
-  }
+  "volar.codeLens.scriptSetupTools": true,
+  "volar.formatting.printWidth": 180
 }

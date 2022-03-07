@@ -1,9 +1,14 @@
-/dist/*
+node_modules
+
 .local
 .output.js
-/node_modules/**
 
 **/*.svg
 **/*.sh
+*.log
 
 /public/*
+/dist/*
+logs
+
+run

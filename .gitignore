@@ -42,3 +42,5 @@ screenshot
 functions/*
 .temp/**
 
+# npm-lock.yaml yarn-lock.yaml pnpm-lock.yaml
+*-lock.yaml 

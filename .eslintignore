@@ -1,16 +1,20 @@
 
-*.sh
 node_modules
+
+*.sh
 *.md
 *.woff
 *.ttf
+
 .vscode
 .idea
+.husky
+.local
+
 dist
 /public
 /docs
-.husky
-.local
 /bin
+
 Dockerfile
 package.json

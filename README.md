@@ -40,3 +40,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - 对 eslint 做了诸多忽略文件（夹）处理
 - 对 prettier 做了诸多忽略文件（夹）处理
 - 兼容了 eslint 与 prettier 编码规范
+
+
+## 依赖
+
+- 🚀 vue3.2 + vite + typescript + pinia + axios + vant
+- 💪 使用 vue3.2 `<script setup>` 语法糖
+- 💪 使用 TypeScript
+- 🍭 支持 jsx 组件写法
+- 🍭 整合 vant ui、less
+- 🍭 使用 viewport 移动端方案
+- 🍭 使用 pinia 替代 vuex，更简单、更高效

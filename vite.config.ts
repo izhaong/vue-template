@@ -1,7 +1,16 @@
+/*
+ * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
+ * @Date: 2022-03-07 13:40:43
+ * @LastEditTime: 2022-03-07 14:08:55
+ * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
+ * @Description:
+ * @FilePath: /vue-template/vite.config.ts
+ */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { resolve } from 'path'
+import WindiCSS from 'vite-plugin-windicss'
 import styleImport, { VantResolve } from 'vite-plugin-style-import'
 
 // 配置参考： https://vitejs.dev/config/
@@ -9,6 +18,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx({}),
+    WindiCSS(),
     styleImport({
       resolves: [VantResolve()]
     })

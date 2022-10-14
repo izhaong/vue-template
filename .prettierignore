@@ -1,8 +1,9 @@
-# Ignore artifacts:
-public
-dist
-node_modules
-build
+/dist/*
+.local
+.output.js
+/node_modules/**
 
-src/assets
-src/static
+**/*.svg
+**/*.sh
+
+/public/*

@@ -1,0 +1,57 @@
+{
+  "name": "vue-template",
+  "version": "1.0.0",
+  "description": "vue2 template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "commit": "czg",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint-staged": "lint-staged",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx,.vue --format=pretty ./src ",
+    "lint:prettier": "prettier -c --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\" --end-of-line auto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izhaong/vue-template.git"
+  },
+  "keywords": [
+    "vue2",
+    "template",
+    "tpl"
+  ],
+  "author": "izhaong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/izhaong/vue-template/issues"
+  },
+  "homepage": "https://github.com/izhaong/vue-template#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "commitizen": "^4.2.5",
+    "cz-git": "^1.3.11",
+    "czg": "^1.3.11",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^9.6.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --fix",
+    "*.{json,yml,css,scss}": "prettier --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git",
+      "useEmoji": true
+    }
+  },
+  "dependencies": {
+    "treer": "^1.0.4"
+  }
+}

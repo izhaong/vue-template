@@ -1,14 +1,18 @@
 /*
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2021-11-20 15:11:24
- * @LastEditTime: 2022-01-09 15:47:07
+ * @LastEditTime: 2022-10-14 16:48:39
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
- * @FilePath: /tsl renren2 编码规范工具配置/.prettierrc.js
+ * @FilePath: /vue-template/.prettierrc.js
  */
 module.exports = {
-  printWidth: 180,
-  singleQuote: true,
+  printWidth: 200,
   semi: false,
-  trailingComma: 'none'
-}
+  vueIndentScriptAndStyle: true,
+  singleQuote: true,
+  trailingComma: 'none',
+  proseWrap: 'never',
+  htmlWhitespaceSensitivity: 'strict',
+  endOfLine: 'auto',
+};

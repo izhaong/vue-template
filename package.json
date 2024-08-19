@@ -1,5 +1,5 @@
 {
-  "name": "vue2-h5-tpl",
+  "name": "vue2-element-tpl",
   "version": "0.1.0",
   "private": true,
   "description": "A front-end development base template with comprehensive knowledge points",
@@ -8,15 +8,18 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service serve"
+    "dev": "vue-cli-service serve",
+    "et": "node_modules/.bin/et",
+    "et:init": "node_modules/.bin/et -i",
+    "et:list": "gulp themes"
   },
   "dependencies": {
     "axios": "^0.26.0",
     "clipboard": "^2.0.10",
     "core-js": "^3.6.5",
     "dayjs": "^1.10.8",
+    "element-ui": "^2.15.14",
     "normalize.css": "^8.0.1",
-    "vant": "^2.12.44",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -33,6 +36,7 @@
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
     "babel-plugin-import": "^1.13.3",
     "cz-customizable": "^6.3.0",
     "eslint": "^6.7.2",
@@ -41,10 +45,17 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "element-theme": "^2.0.1",
+    "element-theme-chalk": "^2.13.2",
+    "file-saver": "^2.0.5",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-load-plugins": "^2.0.3",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
     "husky": "^7.0.4",
     "less": "^4.1.2",
     "less-loader": "^7.3.0",
-    "postcss-px-to-viewport": "^1.1.1",
     "vue-cli-plugin-windicss": "~1.1.3",
     "vue-template-compiler": "^2.6.11"
   },
@@ -56,6 +67,16 @@
       "path": "node_modules/cz-customizable"
     }
   },
+  "element-theme": {
+    "config": "./src/element-ui/theme-variables.scss",
+    "out": "./src/element-ui/theme",
+    "minimize": true,
+    "browsers": [
+      "> 1%",
+      "last 2 versions",
+      "not ie <= 10"
+    ]
+  },
   "engines": {
     "node": ">=10",
     "npm": ">= 6"
@@ -63,7 +84,8 @@
   "keywords": [
     "vue",
     "template",
-    "vue-h5"
+    "vue-element",
+    "仲灏工作室"
   ],
   "license": "MIT",
   "repository": {

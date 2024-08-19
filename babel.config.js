@@ -1,23 +1,27 @@
 /*
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2022-03-01 20:16:52
- * @LastEditTime: 2022-03-03 10:11:59
+ * @LastEditTime: 2024-08-19 20:45:55
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
- * @FilePath: /vue-template/babel.config.js
+ * @FilePath: \vue-template\babel.config.js
  */
 module.exports = {
-  presets: ['@vue/cli-plugin-babel/preset'],
+  presets: ['@vue/cli-plugin-babel/preset', ['es2015', { modules: false }]],
   plugins: [
     [
-      'import',
+      'component',
       {
-        libraryName: 'vant',
-        libraryDirectory: 'es',
-        // 指定样式路径
-        style: (name) => `${name}/style/less`
-      },
-      'vant'
+        libraryName: 'element-ui',
+        styleLibraryName: '~theme'
+      }
+    ],
+    [
+      'component',
+      {
+        libraryName: 'element-ui',
+        styleLibraryName: 'theme-chalk'
+      }
     ]
   ]
 

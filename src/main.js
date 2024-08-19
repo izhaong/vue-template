@@ -1,10 +1,10 @@
 /*
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2022-03-01 20:16:52
- * @LastEditTime: 2022-03-03 10:12:26
+ * @LastEditTime: 2024-08-19 20:46:27
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
- * @FilePath: /vue-template/src/main.js
+ * @FilePath: \vue-template\src\main.js
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -13,9 +13,7 @@ import store from './store'
 
 // plugins
 import './plugins/axios'
-// import './plugins/dayjs'
-// import Vant from 'vant'
-import 'vant/lib/index.css'
+import './plugins/dayjs'
 
 // styles
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
@@ -23,7 +21,9 @@ import '@/styles/index.less' // global css
 import 'windi.css'
 
 // install
-// Vue.use(Vant)
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 

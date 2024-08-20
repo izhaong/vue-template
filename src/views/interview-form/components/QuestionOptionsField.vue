@@ -1,7 +1,7 @@
 <!--
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2024-08-20 12:17:59
- * @LastEditTime: 2024-08-20 17:24:12
+ * @LastEditTime: 2024-08-20 18:06:13
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
  * @FilePath: \vue-template\src\views\interview-form\components\QuestionOptionsField.vue
@@ -9,32 +9,38 @@
 <template>
   <el-row>
     <el-col :span="24" v-for="(opt, idx) in questionOptionsValue" :key="opt.value || idx" class="mb-2">
-      <div v-if="!opt.show" class="w-full flex justify-between">
-        <span class="flex-1 truncate pr-2">{{ opt.content['zh'] }}</span>
-        <span><el-button type="primary" size="mini" @click="opt.show = true">编辑</el-button>
-          <el-popconfirm :title="`确定删除${opt.content['zh']}吗？`"
-            @confirm="questionOptionsValue.splice(idx, 1); $emit('change', questionOptionsValue)">
-            <el-button slot="reference" type="danger" size="mini">删除</el-button>
-          </el-popconfirm>
-        </span>
-      </div>
-      <question-title-field v-model="opt.contentClone" v-else>
-        <div slot="handler" class="text-right mt-2">
-          <el-button size="mini" class="mr-2" plain @click="opt.show = false">取消</el-button>
-          <el-button type="primary" size="mini" @click="handleEdit(opt)">确定</el-button>
+      <transition name="fade" enter-active-class="animate__animated animate__faster animate__zoomIn" leave-active-class="animate__animated animate__faster animate__zoomOut
+      " mode="out-in">
+        <div v-if="!opt.show" class="w-full flex justify-between">
+          <span class="flex-1 truncate pr-2">{{ opt.content['zh'] }}</span>
+          <span><el-button type="primary" size="mini" @click="opt.show = true">编辑</el-button>
+            <el-popconfirm :title="`确定删除${opt.content['zh']}吗？`"
+              @confirm="questionOptionsValue.splice(idx, 1); $emit('change', questionOptionsValue)">
+              <el-button slot="reference" type="danger" size="mini">删除</el-button>
+            </el-popconfirm>
+          </span>
         </div>
-      </question-title-field>
+        <question-title-field v-model="opt.contentClone" v-else>
+          <div slot="handler" class="text-right mt-2">
+            <el-button size="mini" class="mr-2" plain @click="opt.show = false">取消</el-button>
+            <el-button type="primary" size="mini" @click="handleEdit(opt)">确定</el-button>
+          </div>
+        </question-title-field>
+      </transition>
     </el-col>
     <el-col>
-      <div v-if="!createComp.show">
-        <el-button plain size="mini" class="w-full" icon="el-icon-plus" @click="createComp.show = true">添加</el-button>
-      </div>
-      <question-title-field v-else v-model="createComp.content">
-        <div slot="handler" class="text-right mt-2">
-          <el-button size="mini" plain @click="handleCancelItem">取消</el-button>
-          <el-button type="primary" size="mini" @click="handleAddItem">确定</el-button>
+      <transition name="fade" enter-active-class="animate__animated animate__faster animate__zoomIn" leave-active-class="animate__animated animate__faster animate__zoomOut
+      " mode="out-in">
+        <div v-if="!createComp.show">
+          <el-button plain size="mini" class="w-full" icon="el-icon-plus" @click="createComp.show = true">添加</el-button>
         </div>
-      </question-title-field>
+        <question-title-field v-else v-model="createComp.content">
+          <div slot="handler" class="text-right mt-2">
+            <el-button size="mini" plain @click="handleCancelItem">取消</el-button>
+            <el-button type="primary" size="mini" @click="handleAddItem">确定</el-button>
+          </div>
+        </question-title-field>
+      </transition>
     </el-col>
   </el-row>
 </template>

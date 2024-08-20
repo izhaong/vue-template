@@ -5,9 +5,6 @@
 npm install --registry=https://registry.npmmirror.com
 ```
 **如果安装出现错误，先试着npm run dev 跑一下**
-可参考我使用的环境：
-- node 14
-- npm 6
 
 
 
@@ -20,20 +17,7 @@ npm run dev
 ```
 npm run build
 ```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
+内有dist打包好了的 可以直接预览 
 
 
 可能遇到的错误 
@@ -48,6 +32,4 @@ npm ERR! This is probably not a problem with npm. There is likely additional log
 ···
 解决方案： 因为node版本，网络，编译环境各种原因  
 
-改错误不用理会 已经使用了sass代替
-可手动操作
-npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+改错误不用理会 已经使用了sass代替 经过测试 不会影响生产

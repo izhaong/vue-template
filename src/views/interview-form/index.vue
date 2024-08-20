@@ -1,7 +1,7 @@
 <!--
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2024-08-19 23:09:16
- * @LastEditTime: 2024-08-20 14:57:01
+ * @LastEditTime: 2024-08-20 17:22:13
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description: 面试题
  * @FilePath: \vue-template\src\views\interview-form\index.vue
@@ -15,10 +15,10 @@
       </el-select>
     </el-form-item>
     <el-form-item label="问题题目" prop="questionTitle" required>
-      <question-title-form-item v-model="formData.questionTitle" />
+      <question-title-field v-model="formData.questionTitle" />
     </el-form-item>
     <el-form-item label="问题选项" prop="questionOptions">
-      <question-options-form-item v-model="formData.questionOptions" />
+      <question-options-field v-model="formData.questionOptions" @change="handleValidOptions" />
     </el-form-item>
     <el-form-item>
       <el-button type="primary" @click="submitForm('questionForm')">立即创建</el-button>
@@ -27,12 +27,12 @@
 </template>
 <script>
 import { isNil, isEmpty, cloneDeep } from 'lodash'
-import QuestionOptionsFormItem from './components/QuestionOptionsFormItem.vue'
-import QuestionTitleFormItem from './components/QuestionTitleFormItem'
-import { questionOptions, questionInitOption } from './data.js'
+import QuestionOptionsField from './components/QuestionOptionsField.vue'
+import QuestionTitleField from './components/QuestionTitleField'
+import { questionOptions, questionInitOption, languageOptions } from './data.js'
 import { objValsHasNil } from '@/utils'
 export default {
-  components: { QuestionTitleFormItem, QuestionOptionsFormItem },
+  components: { QuestionTitleField, QuestionOptionsField },
   data() {
     return {
       // 问题类型下拉选项 todo：远程字典加载方式
@@ -51,14 +51,14 @@ export default {
         questionTitle: [
           {
             validator: (rule, value, callback) => {
-              if (isNil(value.zh)) {
-                callback(new Error('中文不能为空'))
-                // if more ...
-              } else {
-                callback()
-              }
+              languageOptions.forEach((item) => {
+                if (isNil(value[item.value])) {
+                  callback(new Error(`${item.label}不能为空`))
+                }
+              })
+              callback()
             },
-            trigger: 'change'
+            trigger: 'blur'
           }
         ],
         questionOptions: [
@@ -96,6 +96,11 @@ export default {
           console.log('error submit!!', this.formData)
           return false
         }
+      })
+    },
+    handleValidOptions() {
+      this.$nextTick(() => {
+        this.$refs.questionForm.validateField('questionOptions')
       })
     }
   }

@@ -1,7 +1,7 @@
 <!--
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2024-08-20 12:17:59
- * @LastEditTime: 2024-08-20 17:19:23
+ * @LastEditTime: 2024-08-20 17:24:12
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
  * @FilePath: \vue-template\src\views\interview-form\components\QuestionOptionsField.vue
@@ -12,7 +12,8 @@
       <div v-if="!opt.show" class="w-full flex justify-between">
         <span class="flex-1 truncate pr-2">{{ opt.content['zh'] }}</span>
         <span><el-button type="primary" size="mini" @click="opt.show = true">编辑</el-button>
-          <el-popconfirm :title="`确定删除${opt.content['zh']}吗？`" @confirm="questionOptionsValue.splice(idx, 1)">
+          <el-popconfirm :title="`确定删除${opt.content['zh']}吗？`"
+            @confirm="questionOptionsValue.splice(idx, 1); $emit('change', questionOptionsValue)">
             <el-button slot="reference" type="danger" size="mini">删除</el-button>
           </el-popconfirm>
         </span>

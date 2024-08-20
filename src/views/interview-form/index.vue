@@ -1,7 +1,7 @@
 <!--
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2024-08-19 23:09:16
- * @LastEditTime: 2024-08-20 17:22:13
+ * @LastEditTime: 2024-08-20 17:23:20
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description: 面试题
  * @FilePath: \vue-template\src\views\interview-form\index.vue
@@ -74,8 +74,7 @@ export default {
                 callback()
               }
             },
-            // todo: bug fix 数组push没有触发change事件 需要手动触发 组件需要抛出change事件
-            trigger: 'change'
+            trigger: 'blur'
           }
         ]
       }

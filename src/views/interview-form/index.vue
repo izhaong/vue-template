@@ -1,0 +1,103 @@
+<!--
+ * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
+ * @Date: 2024-08-19 23:09:16
+ * @LastEditTime: 2024-08-20 14:57:01
+ * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
+ * @Description: 面试题
+ * @FilePath: \vue-template\src\views\interview-form\index.vue
+-->
+<template>
+  <el-form :model="formData" :rules="rules" ref="questionForm" label-width="100px">
+    <el-form-item label="问题类型" prop="questionType" required>
+      <el-select v-model="formData.questionType" placeholder="请选择问题类型">
+        <el-option :label="item.label" :value="item.value" v-for="(item, index) in questionOptions"
+          :key="item.value || item.label || index"></el-option>
+      </el-select>
+    </el-form-item>
+    <el-form-item label="问题题目" prop="questionTitle" required>
+      <question-title-form-item v-model="formData.questionTitle" />
+    </el-form-item>
+    <el-form-item label="问题选项" prop="questionOptions">
+      <question-options-form-item v-model="formData.questionOptions" />
+    </el-form-item>
+    <el-form-item>
+      <el-button type="primary" @click="submitForm('questionForm')">立即创建</el-button>
+    </el-form-item>
+  </el-form>
+</template>
+<script>
+import { isNil, isEmpty, cloneDeep } from 'lodash'
+import QuestionOptionsFormItem from './components/QuestionOptionsFormItem.vue'
+import QuestionTitleFormItem from './components/QuestionTitleFormItem'
+import { questionOptions, questionInitOption } from './data.js'
+import { objValsHasNil } from '@/utils'
+export default {
+  components: { QuestionTitleFormItem, QuestionOptionsFormItem },
+  data() {
+    return {
+      // 问题类型下拉选项 todo：远程字典加载方式
+      questionOptions,
+      formData: {
+        /** 问题类型 */
+        questionType: 1,
+        /** 问题题目 */
+        questionTitle: cloneDeep(questionInitOption),
+        /** 问题选项 */
+        questionOptions: []
+      },
+
+      rules: {
+        questionType: [{ required: true, message: '请选择问题类型', trigger: 'change' }],
+        questionTitle: [
+          {
+            validator: (rule, value, callback) => {
+              if (isNil(value.zh)) {
+                callback(new Error('中文不能为空'))
+                // if more ...
+              } else {
+                callback()
+              }
+            },
+            trigger: 'change'
+          }
+        ],
+        questionOptions: [
+          {
+            type: 'array',
+            required: true,
+            validator: (rule, value, callback) => {
+              if (isEmpty(value)) {
+                callback(new Error('问题选项不能为空'))
+              } else if (objValsHasNil(value)) {
+                callback(new Error('请填入选项内容'))
+              } else {
+                callback()
+              }
+            },
+            // todo: bug fix 数组push没有触发change事件 需要手动触发 组件需要抛出change事件
+            trigger: 'change'
+          }
+        ]
+      }
+    }
+  },
+
+  methods: {
+    submitForm(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          console.log('submit...', this.formData)
+          const h = this.$createElement
+          this.$msgbox({
+            title: '表单数据,(不清楚细节需求，建议把题目期望结果放出来,thx)',
+            message: h('p', null, [h('pre', { style: 'color: white;backgroundColor: black;white-space: pre-wrap' }, JSON.stringify(this.formData))])
+          })
+        } else {
+          console.log('error submit!!', this.formData)
+          return false
+        }
+      })
+    }
+  }
+}
+</script>

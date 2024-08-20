@@ -75,7 +75,7 @@
     "source.fixAll.eslint": "explicit"
   },
   "[vue]": {
-    "editor.defaultFormatter": "octref.vetur",
+    "editor.defaultFormatter": "Vue.volar",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit"
     }

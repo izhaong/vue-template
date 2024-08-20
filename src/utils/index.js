@@ -1,15 +1,15 @@
 /*
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2022-03-02 17:05:03
- * @LastEditTime: 2022-03-02 17:05:03
+ * @LastEditTime: 2024-08-20 13:17:42
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
- * @FilePath: /vue-template/src/utils/index.js
+ * @FilePath: \vue-template\src\utils\index.js
  */
 /**
  * Created by PanJiaChen on 16/11/18.
  */
-
+import { isNil } from 'lodash'
 /**
  * Parse the time to string
  * @param {(Object|string|number)} time
@@ -50,13 +50,13 @@ export function parseTime(time, cFormat) {
     s: date.getSeconds(),
     a: date.getDay()
   }
-  const time_str = format.replace(/{([ymdhisa])+}/g, (result, key) => {
+  const TIME_STR = format.replace(/{([ymdhisa])+}/g, (result, key) => {
     const value = formatObj[key]
     // Note: getDay() returns 0 on Sunday
     if (key === 'a') { return ['日', '一', '二', '三', '四', '五', '六'][value] }
     return value.toString().padStart(2, '0')
   })
-  return time_str
+  return TIME_STR
 }
 
 /**
@@ -363,3 +363,6 @@ export function removeClass(ele, cls) {
     ele.className = ele.className.replace(reg, ' ')
   }
 }
+
+/** 判断对象值是否有null或者undefined */
+export const objValsHasNil = (obj) => Object.values(obj).some(isNil)

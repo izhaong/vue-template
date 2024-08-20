@@ -1,7 +1,7 @@
 /*
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2022-03-01 20:16:52
- * @LastEditTime: 2024-08-19 20:46:27
+ * @LastEditTime: 2024-08-19 23:38:29
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Description:
  * @FilePath: \vue-template\src\main.js
@@ -11,6 +11,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import '@/element-ui/theme/index.css'
+import '@/assets/scss/aui.scss'
 // plugins
 import './plugins/axios'
 import './plugins/dayjs'

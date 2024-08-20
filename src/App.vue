@@ -1,10 +1,14 @@
+<!--
+ * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
+ * @Date: 2024-08-19 20:32:26
+ * @LastEditTime: 2024-08-19 23:33:59
+ * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
+ * @Description:
+ * @FilePath: \vue-template\src\App.vue
+-->
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <transition name="el-fade-in-linear">
     <router-view />
-  </div>
+  </transition>
 </template>
 

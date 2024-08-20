@@ -1,15 +1,15 @@
 <!--
  * @Author: 仲灏<izhaong@outlook.com>🌶🌶🌶
  * @Date: 2024-08-19 20:52:13
- * @LastEditTime: 2024-08-19 22:05:11
+ * @LastEditTime: 2024-08-19 23:49:06
  * @LastEditors: 仲灏<izhaong@outlook.com>🌶🌶🌶
- * @Description:  
+ * @Description:
  * @FilePath: \vue-template\src\components\main-theme-tools.vue
 -->
 <template>
   <div class="aui-theme-tools" :class="{ 'aui-theme-tools--open': isOpen }">
     <div class="aui-theme-tools__toggle" @click="isOpen = !isOpen">
-      <svg class="icon-svg" aria-hidden="true"><use xlink:href="#icon-setting"></use></svg>
+      <i class="el-icon-setting"></i>
     </div>
     <div class="aui-theme-tools__content">
       <div class="aui-theme-tools__item">
@@ -36,7 +36,7 @@ export default {
     return {
       isOpen: false,
       themeList: require('@/element-ui/config.js'),
-      themeColor: 'turquoise'
+      themeColor: 'blue'
     }
   },
   methods: {
